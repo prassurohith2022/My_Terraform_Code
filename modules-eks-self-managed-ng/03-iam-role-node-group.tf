@@ -1,7 +1,7 @@
 # IAM Role for EKS Node Group 
 resource "aws_iam_role" "eks_nodegroup_role" {
-  name = var.iam_role_eks_nodegroup_name                
-  
+  name = var.iam_role_eks_nodegroup_name
+
   assume_role_policy = jsonencode({
     Statement = [{
       Action = "sts:AssumeRole"

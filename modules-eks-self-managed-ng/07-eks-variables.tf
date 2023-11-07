@@ -1,34 +1,45 @@
 # EKS Cluster Input Variables
 
-# AWS Region
+# 1.AWS Region:
+
 variable "aws_region" {
-  description = "Region in which AWS Resources to be created" 
+  description = "Region in which AWS Resources to be created"
 }
 
-# Environment Variable
+#2. Environment Variable:
+
 variable "environment" {
   description = "Environment Variable used as a prefix"
 }
 
-# variable for iam role for eks-master-name
+#3. Variables for Access Key:
+
+
+#4. variables for iam roles:
 
 variable "iam_role_eks_master_name" {
   description = "iam_role_eks_master_name"
 }
- 
+
 variable "iam_role_eks_nodegroup_name" {
   description = "iam_role_eks_nodegroup_name"
 }
-# variable for Access key:
 
-variable "key_name" {
-  description = "key_name"
-}
+
+# 5. Variable for Self Managed node-SG:
+
+
+# variable for vpc-id
+
+
+# variable for vpc-cidr:
+
 
 variable "cluster_name" {
   description = "Name of the EKS cluster. Also used as a prefix in names of related resources."
   type        = string
 }
+
 
 variable "cluster_service_ipv4_cidr" {
   description = "service ipv4 cidr for the kubernetes cluster"
