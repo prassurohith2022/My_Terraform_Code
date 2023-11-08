@@ -1,22 +1,14 @@
-{
-  "metrics": {
-    "append_dimensions": {
-      "AutoScalingGroupName": "${aws:AutoScalingGroupName}",
-      "ImageId": "${aws:ImageId}",
-      "InstanceId": "${aws:InstanceId}",
-      "InstanceType": "${aws:InstanceType}"
-    },
-    "metrics_collected": {
-      "cpu": {
-        "measurement": ["cpu_usage_idle", "cpu_usage_iowait"]
-      },
-      "disk": {
-        "measurement": ["used_percent"],
-        "resources": ["/"]
-      },
-      "memory": {
-        "measurement": ["mem_used_percent"]
-      }
-    }
-  }
-}
+
+1. Cloud Watch Metrics for EC2 Linux:
+-------------------------------------
+https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/metrics-collected-by-CloudWatch-agent.html
+
+
+2. EC2 Linux:
+-------------
+CPU      : NameSpace: AWS/EC2, MetricsName: CPUUtilization
+MEMORY   : NameSpace: CWAgent, MetricsName: mem_used_percent
+Disk     : NameSpace: CWAgent, MetricsName: disk_used_percent
+
+3. EC2 Windows:
+----------------
