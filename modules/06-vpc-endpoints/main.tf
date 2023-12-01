@@ -66,7 +66,11 @@ resource "aws_vpc_endpoint" "ep1" {
 ##4. VPC Endpoint creation Gateway
 
 resource "aws_vpc_endpoint" "ep2" {
-  route_table_ids = data.aws_route_tables.all_route_tables.ids 
+  route_table_ids = [
+    data.aws_route_table.first_route_table.id,
+    data.aws_route_table.second_route_table.id,
+    data.aws_route_table.third_route_table.id,
+  ]
   service_name = var.ep_gateway
   vpc_endpoint_type = "Gateway"
   vpc_id       = data.aws_vpc.vpc-id.id
